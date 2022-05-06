@@ -1,6 +1,6 @@
 <script>
   import { marked } from "marked";
-  import { NavItem, NavLink} from "sveltestrap"
+  import { Nav, NavItem, NavLink} from "sveltestrap"
   import EditorMenu from "./EditorMenu.svelte"
   let mdText = "";
   let preview = false;
@@ -11,7 +11,8 @@
 </script>
 
 <div class="div-menu">
-{#if preview}
+  <EditorMenu />
+  {#if preview}
   <NavItem>
     <NavLink on:click={handleTogglePreview} href="#">Editor</NavLink>  
   </NavItem>
@@ -20,7 +21,6 @@
     <NavLink on:click={handleTogglePreview} href="#">Preview</NavLink>
   </NavItem>
   {/if}
-<EditorMenu />
 </div>
 
 <section>
@@ -38,9 +38,13 @@
 
 <style>
   .div-menu {
+    background-color: rgb(65, 5, 5);
     display: flex;
     flex-direction: row;
-    width: 100%;
+    border: none;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: large;
   }
 
   button {

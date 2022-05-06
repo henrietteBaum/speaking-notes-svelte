@@ -47,14 +47,7 @@
     font-size: large;
   }
 
-  button {
-    width: 5em;
-    height: 2em;
-    padding: auto;    
-    background-color: rgb(65, 5, 5);
-    color: orange;
-    border: none;
-  }
+
   .md-input {
     width: 100%;
     height: 100vh;

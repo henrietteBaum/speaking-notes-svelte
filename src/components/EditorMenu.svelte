@@ -12,7 +12,7 @@
 
 </script>
 <div class="nav-bar">
-  <Nav dark tabs>
+  <Nav dark>
   
     <Dropdown dark nav inNavbar>
       <DropdownToggle nav caret>File</DropdownToggle>
@@ -49,6 +49,7 @@
     font-size: large;
     width: 100vh;
     outline: none;
+    border: none;
   }
 
   :global(.nav-link) {

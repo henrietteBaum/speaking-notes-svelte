@@ -2,12 +2,21 @@
   import { marked } from "marked";
   import { Nav, NavItem, NavLink} from "sveltestrap"
   import EditorMenu from "./EditorMenu.svelte"
+  import Help from "./Help.svelte"
+  import { fly } from 'svelte/transition';
+
   let mdText = "";
   let preview = false;
 
   function handleTogglePreview() {
     preview = !preview;
   }
+
+  let visibleHelp = false;
+	export const showHelp = () => {
+		visibleHelp = !visibleHelp
+	}
+
 </script>
 
 <div class="div-menu">
@@ -33,6 +42,12 @@
   <textarea class="md-input" bind:value={mdText} />
   {/if}
 </section>
+
+{#if visibleHelp}
+	<p transition:fly="{{ x: 300, duration: 2000 }}">
+		<Help />
+	</p>
+{/if}
 
 
 
@@ -60,5 +75,7 @@
     height: 100vh;
     background-color: rgb(86, 1, 1);
     color: white;
+    text-align: left;
+    padding: 1em;
   }
 </style>

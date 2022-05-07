@@ -20,6 +20,7 @@
   "dependencies": {
     "marked": "^4.0.15",
     "sirv-cli": "^2.0.0",
+    "svelte-spa-router": "^3.2.0",
     "sveltestrap": "^5.9.0"
   }
 }

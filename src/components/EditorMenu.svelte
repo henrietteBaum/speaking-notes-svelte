@@ -11,6 +11,7 @@
 
 
 </script>
+
 <div class="nav-bar">
   <Nav dark>
   
@@ -33,14 +34,15 @@
         <DropdownItem>Clear Editor</DropdownItem>
       </DropdownMenu>
     </Dropdown>
-    <NavItem>
-      <NavLink href="#">Help</NavLink>
+    <NavItem >
+      <!-- <NavLink href="#">Help</NavLink> -->
     </NavItem>
     <NavItem>
       <NavLink href="#">About</NavLink>
     </NavItem>
   </Nav>
 </div>
+
 
 
 <style>

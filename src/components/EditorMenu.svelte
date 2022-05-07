@@ -9,6 +9,10 @@
     NavLink
   } from 'sveltestrap';
 
+  import { push } from "svelte-spa-router"
+
+  const linkHelp = "/help";
+  const linkAbout ="/about"; 
 
 </script>
 
@@ -24,6 +28,7 @@
         <DropdownItem>Clear Editor</DropdownItem>
       </DropdownMenu>
     </Dropdown>
+
     <Dropdown dark nav inNavbar>
       <DropdownToggle nav caret>Speak</DropdownToggle>
       <DropdownMenu dark>
@@ -34,11 +39,12 @@
         <DropdownItem>Clear Editor</DropdownItem>
       </DropdownMenu>
     </Dropdown>
-    <NavItem >
-      <!-- <NavLink href="#">Help</NavLink> -->
+    <!-- Navitems -->
+    <NavItem>
+      <button on:click={() => push(linkHelp)}>Help</button>
     </NavItem>
     <NavItem>
-      <NavLink href="#">About</NavLink>
+      <button on:click={() => push(linkAbout)}>About</button>
     </NavItem>
   </Nav>
 </div>
@@ -46,6 +52,17 @@
 
 
 <style>
+
+  button {
+    background-color: transparent;
+    color: orange;
+    border: none;
+    padding-left: 1.7em;
+  }
+
+  button:hover {
+    text-decoration: underline;
+  }
   .nav-bar {
     background-color: rgb(65, 5, 5);
     font-size: large;

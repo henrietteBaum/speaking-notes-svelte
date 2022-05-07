@@ -12,11 +12,11 @@
 </script>
 	
 	<main>
-	<nav>
+	<!-- <nav>
 		<a href="/#/">Editor</a>
 		<a href="/#/help">Help</a>
 		<a href="/#/about">About</a>
-	</nav>
+	</nav> -->
 	
 	<Router {routes} />
 

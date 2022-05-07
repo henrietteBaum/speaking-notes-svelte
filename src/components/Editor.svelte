@@ -43,12 +43,6 @@
   {/if}
 </section>
 
-{#if visibleHelp}
-	<p transition:fly="{{ x: 300, duration: 2000 }}">
-		<Help />
-	</p>
-{/if}
-
 
 
 <style>

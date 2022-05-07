@@ -3,7 +3,6 @@
   import { Nav, NavItem, NavLink} from "sveltestrap"
   import EditorMenu from "./EditorMenu.svelte"
   import Help from "./Help.svelte"
-  import { fly } from 'svelte/transition';
 
   let mdText = "";
   let preview = false;
@@ -42,7 +41,6 @@
   <textarea class="md-input" bind:value={mdText} />
   {/if}
 </section>
-
 
 
 <style>

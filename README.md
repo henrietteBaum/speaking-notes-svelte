@@ -7,6 +7,20 @@
 
 Svelte-SPA-router
 
+Routing in App.svelte:
+```js
+	<nav>
+		<a href="/#/">Editor</a>
+		<a href="/#/help">Help</a>
+		<a href="/#/about">About</a>
+	</nav> 
+```
+Instead of setting up a navigation in App.svelte I habe used **Sveltestrap** in a separate component `EditorMenu`, because I want to use the Dropdown from Sveltestrap.
+
+For routing to Help and About I put a button inside my sveltestrap-Nav, which liks to the components. Found this example:
+
+[Stackoverflow:](https://stackoverflow.com/questions/65649357/svelte-pass-useaction-to-component-child)
+
 ```javascript
 <script>
   import { Button } from 'sveltestrap';
@@ -17,8 +31,28 @@ Svelte-SPA-router
 <Button on:click={() => push(myLink)}>
   Click here
 </Button>
+```
 
+And in my EditorMenu:
 
+```html
+<script>
+  import { push } from "svelte-spa-router"
+
+  const linkHelp = "/help";
+  const linkAbout ="/about"; 
+  </script>
+
+<Nav>
+<!-- ... -->
+  <NavItem>
+    <button on:click={() => push(linkHelp)}>Help</button>
+  </NavItem>
+  <NavItem>
+    <button on:click={() => push(linkAbout)}>About</button>
+  </NavItem>
+<!-- ... -->
+</Nav>
 ```
 
 ## Learning sources:

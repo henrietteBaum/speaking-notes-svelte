@@ -2,6 +2,7 @@
   import { marked } from "marked";
   import { Nav, NavItem, NavLink} from "sveltestrap"
   import EditorMenu from "./EditorMenu.svelte"
+  import Speech from "./Speech.svelte"
   let mdText = "";
   let preview = false;
 
@@ -40,6 +41,7 @@
   {/if}
 </section>
 
+<Speech {mdText} />
 
 <style>
   .div-menu {

@@ -21,7 +21,7 @@ For routing to Help and About I put a button inside my sveltestrap-Nav, which li
 
 [Stackoverflow:](https://stackoverflow.com/questions/65649357/svelte-pass-useaction-to-component-child)
 
-```javascript
+```svelte
 <script>
   import { Button } from 'sveltestrap';
   import { push } from 'svelte-spa-router';
@@ -55,9 +55,24 @@ And in my EditorMenu:
 </Nav>
 ```
 
+## Speech Synthesis
+
+Use props and component for Speech-Synthesis
+
+```svelte
+// Speech.svelte
+
+<script>
+    export mdText
+</script>
+```
+
 ## Learning sources:
 
 - https://stackoverflow.com/questions/65649357/svelte-pass-useaction-to-component-child
 
 - [YouTube: Svelte and Speech-Synthesis-API](https://www.youtube.com/watch?v=XDdKWOqCcZk)
 - [GitHub: phptuts](https://github.com/phptuts/speechsynthesissvelte)
+
+- [YouTube: Codeevolution, Svelte components](https://www.youtube.com/watch?v=v943IElHCeY)
+

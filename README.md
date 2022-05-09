@@ -57,5 +57,7 @@ And in my EditorMenu:
 
 ## Learning sources:
 
-https://stackoverflow.com/questions/65649357/svelte-pass-useaction-to-component-child
+- https://stackoverflow.com/questions/65649357/svelte-pass-useaction-to-component-child
 
+- [YouTube: Svelte and Speech-Synthesis-API](https://www.youtube.com/watch?v=XDdKWOqCcZk)
+- [GitHub: phptuts](https://github.com/phptuts/speechsynthesissvelte)

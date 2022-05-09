@@ -18,7 +18,6 @@
 
 <div class="nav-bar">
   <Nav dark>
-  
     <Dropdown dark nav inNavbar>
       <DropdownToggle nav caret>File</DropdownToggle>
       <DropdownMenu dark>
@@ -41,10 +40,10 @@
     </Dropdown>
     <!-- Navitems -->
     <NavItem>
-      <button on:click={() => push(linkHelp)}>Help</button>
+      <NavLink on:click={() => push(linkHelp)}>Help</NavLink>
     </NavItem>
     <NavItem>
-      <button on:click={() => push(linkAbout)}>About</button>
+      <NavLink on:click={() => push(linkAbout)}>About</NavLink>
     </NavItem>
   </Nav>
 </div>
@@ -53,22 +52,15 @@
 
 <style>
 
-  button {
-    background-color: transparent;
-    color: orange;
-    border: none;
-    padding-left: 1.7em;
-  }
-
-  button:hover {
-    text-decoration: underline;
-  }
   .nav-bar {
     background-color: rgb(65, 5, 5);
     font-size: large;
     width: 100vh;
     outline: none;
     border: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
   }
 
   :global(.nav-link) {

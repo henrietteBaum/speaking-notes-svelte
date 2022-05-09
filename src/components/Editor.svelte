@@ -2,8 +2,6 @@
   import { marked } from "marked";
   import { Nav, NavItem, NavLink} from "sveltestrap"
   import EditorMenu from "./EditorMenu.svelte"
-  import Help from "./Help.svelte"
-
   let mdText = "";
   let preview = false;
 
@@ -69,5 +67,9 @@
     color: white;
     text-align: left;
     padding: 1em;
+  }
+
+  :global(li.nav-item) {
+    list-style: none;
   }
 </style>

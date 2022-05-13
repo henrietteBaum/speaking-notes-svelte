@@ -2,6 +2,7 @@
   import { marked } from "marked";
   import { Nav, NavItem, NavLink} from "sveltestrap"
   import EditorMenu from "./EditorMenu.svelte"
+  import DdSpeak from "./DdSpeak.svelte"
   import Speech from "./Speech.svelte"
   let mdText = "";
   let preview = false;
@@ -18,7 +19,8 @@
 </script>
 
 <div class="div-menu">
-  <EditorMenu />
+  <!-- <EditorMenu /> -->
+  <DdSpeak {mdText}/>
   {#if preview}
   <NavItem>
     <NavLink on:click={handleTogglePreview} href="#">Editor</NavLink>  
@@ -41,7 +43,7 @@
   {/if}
 </section>
 
-<Speech {mdText} />
+<!-- <Speech {mdText} /> -->
 
 <style>
   .div-menu {

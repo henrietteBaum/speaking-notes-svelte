@@ -8,7 +8,8 @@
     DropdownMenu,
     NavLink
   } from 'sveltestrap';
-
+  
+  import DdSpeak from './DdSpeak.svelte';
   import { push } from "svelte-spa-router"
 
   const linkHelp = "/help";
@@ -28,7 +29,9 @@
       </DropdownMenu>
     </Dropdown>
 
-    <Dropdown dark nav inNavbar>
+    <DdSpeak />
+
+    <!-- <Dropdown dark nav inNavbar>
       <DropdownToggle nav caret>Speak</DropdownToggle>
       <DropdownMenu dark>
         <DropdownItem>Speak Text</DropdownItem>
@@ -37,7 +40,7 @@
         <DropdownItem divider />
         <DropdownItem>Clear Editor</DropdownItem>
       </DropdownMenu>
-    </Dropdown>
+    </Dropdown> -->
     <!-- Navitems -->
     <NavItem>
       <NavLink on:click={() => push(linkHelp)}>Help</NavLink>

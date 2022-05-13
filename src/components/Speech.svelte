@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
     import { onMount } from "svelte";
   
     import {
@@ -113,7 +113,7 @@
     <Row>
       <Col>
         <FormGroup>
-          <Button on:click={play} color="primary">Play</Button>
+          <Button on:click={play} color="dark">Play</Button>
         </FormGroup>
       </Col>
     </Row>

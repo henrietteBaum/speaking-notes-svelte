@@ -1,12 +1,13 @@
 <script>
   import { onMount } from "svelte";
 
-  import { 
-    Input, 
+  import {
+    Label,
+    Input,
     Dropdown,
     DropdownItem,
     DropdownMenu,
-    DropdownToggle
+    DropdownToggle,
   } from "sveltestrap";
 
   export let voices = [];
@@ -40,17 +41,34 @@
 </script>
 
 <Dropdown dark nav inNavbar>
-      <DropdownToggle nav caret>Speak</DropdownToggle>
-      <DropdownMenu dark>
-        <DropdownItem on:click={play} color="dark">Speak</DropdownItem>
-        <DropdownItem divider />
-          <Input bind:value={selectedVoice} type="select" id="voices">
-            {#each voices as voice}
-              <option value={voice}>{printVoice(voice)}</option>
-            {/each}
-          </Input>
-          
-      </DropdownMenu>
-    </Dropdown>
+  <DropdownToggle nav caret>Speak Text</DropdownToggle>
+  <DropdownMenu dark>
+    <DropdownItem on:click={play} color="dark">Speak</DropdownItem>
+    <DropdownItem divider />
+    <Label class="label" for="voices">Select a voice</Label>
+    <Input class="input" bind:value={selectedVoice} type="select" id="voices" >
+      {#each voices as voice}
+        <option value={voice}>{printVoice(voice)}</option>
+      {/each}
+    </Input>
+  </DropdownMenu>
+</Dropdown>
+
+<style>
+  option {
+    background-color: #343A40;
+    color: orange;
+  }
+
+  :global(.input) {
+    background-color: #343A40;
+    color: orange;
+  }
+
+  :global(.label) {
+    color: transparent;
+    height: 1px;
+  }
 
 
+</style>

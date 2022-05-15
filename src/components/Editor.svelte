@@ -1,9 +1,8 @@
 <script>
   import { marked } from "marked";
-  import { Nav, NavItem, NavLink} from "sveltestrap"
+  import { NavItem, NavLink} from "sveltestrap"
   import EditorMenu from "./EditorMenu.svelte"
   import DdSpeak from "./DdSpeak.svelte"
-  import Speech from "./Speech.svelte"
   let mdText = "";
   let preview = false;
 
@@ -19,7 +18,7 @@
 </script>
 
 <div class="div-menu">
-  <!-- <EditorMenu /> -->
+  <EditorMenu />
   <DdSpeak {mdText}/>
   {#if preview}
   <NavItem>
@@ -47,10 +46,12 @@
 
 <style>
   .div-menu {
-    background-color: rgb(65, 5, 5);
+    background: linear-gradient(#390101, #7f0408);
+
+    /* background-color: rgb(65, 5, 5); */
+    height: 50px;
     display: flex;
     flex-direction: row;
-    border: none;
     justify-content: flex-start;
     align-items: center;
     font-size: large;
@@ -63,7 +64,11 @@
     background-color: rgb(50, 51, 59);
     color: white;
     border: none;
+    outline: none;
   }
+
+ 
+
   .prev {
     width: 100%;
     height: 100vh;
@@ -73,7 +78,12 @@
     padding: 1em;
   }
 
+  section {
+    background-color: orange;
+  }
+
   :global(li.nav-item) {
     list-style: none;
   }
+
 </style>

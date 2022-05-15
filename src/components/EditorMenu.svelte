@@ -1,12 +1,14 @@
 <script>
   import {
     Nav,
+    NavbarBrand,
     NavItem,
     Dropdown,
     DropdownItem,
     DropdownToggle,
     DropdownMenu,
-    NavLink
+    NavLink,
+    Image
   } from 'sveltestrap';
 
   import { push } from "svelte-spa-router"
@@ -18,6 +20,9 @@
 
 <div class="nav-bar">
   <Nav dark>
+    <NavbarBrand href="/">
+      <img src="./sveltelogo.png" alt="svelte-logo"/>
+    </NavbarBrand>
     <Dropdown dark nav inNavbar>
       <DropdownToggle nav caret>File</DropdownToggle>
       <DropdownMenu dark>
@@ -35,12 +40,17 @@
     <NavItem>
       <NavLink on:click={() => push(linkAbout)}>About</NavLink>
     </NavItem>
+    <NavItem divider> | </NavItem>
   </Nav>
 </div>
 
 
-
 <style>
+
+  img {
+    height: 20px;
+    padding-left: 1em;
+  }
 
   /* .nav-bar {
     background-color: rgb(65, 5, 5);

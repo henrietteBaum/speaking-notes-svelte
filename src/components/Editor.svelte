@@ -47,7 +47,6 @@
 <style>
   .div-menu {
     background: linear-gradient(#390101, #7f0408);
-
     /* background-color: rgb(65, 5, 5); */
     height: 50px;
     display: flex;
@@ -79,7 +78,9 @@
   }
 
   section {
-    background-color: orange;
+    background-color: rgb(50, 51, 59);
+    color: orange;
+    letter-spacing: 2px;
   }
 
   :global(li.nav-item) {

@@ -3,6 +3,7 @@
     Nav,
     NavItem,
     NavLink,
+    NavbarBrand
   } from "sveltestrap";
 
   import { push } from "svelte-spa-router";
@@ -15,6 +16,9 @@
 <div class="nav-bar">
   <Nav dark>
     <!-- Navitems -->
+    <NavbarBrand href="/">
+      <img src="./sveltelogo.png" alt="svelte-logo" />
+    </NavbarBrand>
     <NavItem>
       <NavLink on:click={() => push(linkEditor)}>Editor</NavLink>
     </NavItem>
@@ -37,5 +41,10 @@
     justify-content: flex-start;
     align-items: center;
     font-size: large;
+  }
+
+  img {
+    height: 20px;
+    padding-left: 1em;
   }
 </style>

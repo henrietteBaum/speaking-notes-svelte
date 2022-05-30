@@ -1,9 +1,9 @@
 <script>
   import { marked } from "marked";
-  import { NavItem, NavLink} from "sveltestrap"
-  import EditorMenu from "./EditorMenu.svelte"
-  import DdSpeak from "./DdSpeak.svelte"
-  let mdText = "";
+  import { NavItem, NavLink } from "sveltestrap";
+  import EditorMenu from "./EditorMenu.svelte";
+  import DdSpeak from "./DdSpeak.svelte";
+  import { textStore } from "../stores/TextStores.js";
   let preview = false;
 
   function handleTogglePreview() {
@@ -11,51 +11,48 @@
   }
 
   let visibleHelp = false;
-	export const showHelp = () => {
-		visibleHelp = !visibleHelp
-	}
-
+  export const showHelp = () => {
+    visibleHelp = !visibleHelp;
+  };
 </script>
 
 <div class="div-menu">
   <EditorMenu />
-  <DdSpeak {mdText}/>
+  <DdSpeak {$textStore} />
   {#if preview}
-  <NavItem>
-    <NavLink on:click={handleTogglePreview} href="#">Editor</NavLink>  
-  </NavItem>
+    <NavItem>
+      <NavLink on:click={handleTogglePreview} href="#">Editor</NavLink>
+    </NavItem>
   {:else}
-  <NavItem>
-    <NavLink on:click={handleTogglePreview} href="#">Preview</NavLink>
-  </NavItem>
+    <NavItem>
+      <NavLink on:click={handleTogglePreview} href="#">Preview</NavLink>
+    </NavItem>
   {/if}
 </div>
 
 <section>
   {#if preview}
-  Preview
-  <div class="prev">
-    {@html marked(mdText)} 
-  </div>
+    Preview
+    <div class="prev">
+      {@html marked($textStore)}
+    </div>
   {:else}
-  <textarea class="md-input" bind:value={mdText} />
+    <textarea class="md-input" bind:value={$textStore} />
   {/if}
 </section>
 
 <!-- <Speech {mdText} /> -->
-
 <style>
   .div-menu {
     background: linear-gradient(#390101, #7f0408);
-    /* background-color: rgb(65, 5, 5); */
     height: 50px;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
     font-size: large;
+    min-width: 700px;
   }
-
 
   .md-input {
     width: 100%;
@@ -64,9 +61,10 @@
     color: white;
     border: none;
     outline: none;
+    padding: 2em;
+    font-size: larger;
+    letter-spacing: 1px;
   }
-
- 
 
   .prev {
     width: 100%;
@@ -86,5 +84,4 @@
   :global(li.nav-item) {
     list-style: none;
   }
-
 </style>

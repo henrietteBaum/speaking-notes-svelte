@@ -1,71 +1,23 @@
 # Speaking Notes Svelte
 
+Demo-Project for learning purpose. A simple Markdown-Editor, written with Svelte.
+Provide accessibility for visual-impared users.
 
 
+![screenshot: app-window speaking notes v.5](screenshots/screen-editor-5.0.png)
 
-## routing
 
-Svelte-SPA-router
+## Dependencies
 
-Routing in App.svelte:
-```js
-	<nav>
-		<a href="/#/">Editor</a>
-		<a href="/#/help">Help</a>
-		<a href="/#/about">About</a>
-	</nav> 
-```
-Instead of setting up a navigation in App.svelte I habe used **Sveltestrap** in a separate component `EditorMenu`, because I want to use the Dropdown from Sveltestrap.
+- Svelte
+- Sveltestrap
+- Svelte-SPA-router
+- Marked
+- Web-Speech-Api
 
-For routing to Help and About I put a button inside my sveltestrap-Nav, which liks to the components. Found this example:
 
-[Stackoverflow:](https://stackoverflow.com/questions/65649357/svelte-pass-useaction-to-component-child)
-
-```svelte
-<script>
-  import { Button } from 'sveltestrap';
-  import { push } from 'svelte-spa-router';
-  let myLink = '/foo/bar';
-</script>
-
-<Button on:click={() => push(myLink)}>
-  Click here
-</Button>
-```
-
-And in my EditorMenu:
-
-```html
-<script>
-  import { push } from "svelte-spa-router"
-
-  const linkHelp = "/help";
-  const linkAbout ="/about"; 
-  </script>
-
-<Nav>
-<!-- ... -->
-  <NavItem>
-    <button on:click={() => push(linkHelp)}>Help</button>
-  </NavItem>
-  <NavItem>
-    <button on:click={() => push(linkAbout)}>About</button>
-  </NavItem>
-<!-- ... -->
-</Nav>
-```
-
-## Speech Synthesis
-
-Use props and component for Speech-Synthesis
-
-```svelte
-// Speech.svelte
-
-<script>
-    export mdText
-</script>
-```
+## Read more: Speaking-Notes-WIKI:
+[WIKI](WIKI.md)
 
 ## Learning sources:
 
@@ -75,4 +27,5 @@ Use props and component for Speech-Synthesis
 - [GitHub: phptuts](https://github.com/phptuts/speechsynthesissvelte)
 
 - [YouTube: Codeevolution, Svelte components](https://www.youtube.com/watch?v=v943IElHCeY)
+- [YouTube: dcode Svelte tutorial](https://www.youtube.com/playlist?list=PLVvjrrRCBy2KpGl3-s_ELqKd4hiNCN6yz)
 

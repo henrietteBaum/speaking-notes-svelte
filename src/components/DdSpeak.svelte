@@ -1,6 +1,6 @@
 <script>
   import { onMount } from "svelte";
-
+  import { textStore } from "../stores/TextStores.js";
   import {
     Label,
     Input,
@@ -14,7 +14,6 @@
   let pitch = 1;
   let rate = 1;
   let volume = 1;
-  export let mdText;
   export let selectedVoice;
 
   onMount(() => {
@@ -27,7 +26,7 @@
   function play() {
     speechSynthesis.cancel();
 
-    const utterance = new SpeechSynthesisUtterance(mdText);
+    const utterance = new SpeechSynthesisUtterance($textStore);
     utterance.voice = selectedVoice;
     speechSynthesis.speak(utterance);
   }
@@ -45,8 +44,9 @@
   <DropdownMenu dark>
     <DropdownItem on:click={play} color="dark">Speak</DropdownItem>
     <DropdownItem divider />
+    <DropdownItem header>Select a voice</DropdownItem>
     <Label class="label" for="voices">Select a voice</Label>
-    <Input class="input" bind:value={selectedVoice} type="select" id="voices" >
+    <Input class="input" bind:value={selectedVoice} type="select" id="voices">
       {#each voices as voice}
         <option value={voice}>{printVoice(voice)}</option>
       {/each}
@@ -56,12 +56,12 @@
 
 <style>
   option {
-    background-color: #343A40;
+    background-color: #343a40;
     color: orange;
   }
 
   :global(.input) {
-    background-color: #343A40;
+    background-color: #343a40;
     color: orange;
   }
 
@@ -69,6 +69,4 @@
     color: transparent;
     height: 1px;
   }
-
-
 </style>

@@ -7,6 +7,10 @@ Provide accessibility for visual-impared users.
 ![screenshot: app-window speaking notes v.5](screenshots/screen-editor-5.0.png)
 
 
+## ToDo:
+- add "Save File"
+- add "Clear Editor"
+- update Wiki
 ## Dependencies
 
 - Svelte

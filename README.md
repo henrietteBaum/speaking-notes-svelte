@@ -8,7 +8,6 @@ Provide accessibility for visual-impared users.
 
 
 ## ToDo:
-- add "Save File"
 - add "Clear Editor"
 - update Wiki
 ## Dependencies
@@ -21,7 +20,6 @@ Provide accessibility for visual-impared users.
 
 
 ## Read more: Speaking-Notes-WIKI:
-[WIKI](WIKI.md)
 
 ## Learning sources:
 

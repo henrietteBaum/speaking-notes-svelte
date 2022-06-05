@@ -11,7 +11,7 @@
   } from "sveltestrap";
 
   import { push } from "svelte-spa-router";
-  import { textStore } from "../stores/TextStores.js";
+  import { textStore, fileName } from "../stores/TextStores.js";
 
   const linkHelp = "/help";
   const linkAbout = "/about";
@@ -20,14 +20,26 @@
 
   const handleFileSelected = (e) => {
     let file = e.target.files[0];
+    $fileName = file.name;
+    console.log($fileName);
     let reader = new FileReader();
     reader.readAsText(file);
     reader.onload = (e) => {
       content = e.target.result;
       $textStore = content;
     };
-    console.log({ $textStore });
+    // console.log({ $textStore });
   };
+
+  function handleSaveFile(filename) {
+    const blob = new Blob([$textStore], {type: 'text/plain'});
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.download = filename || 'untitled.md';
+    link.href = url;
+    link.click();
+    URL.revokeObjectURL(url); 
+}
 </script>
 
 <div class="nav-bar">
@@ -47,7 +59,7 @@
             id="file-input"
           />
         </DropdownItem>
-        <DropdownItem>Save Text</DropdownItem>
+        <DropdownItem on:click={handleSaveFile($fileName)} >Save Text</DropdownItem>
         <DropdownItem divider />
         <DropdownItem>Clear Editor</DropdownItem>
       </DropdownMenu>

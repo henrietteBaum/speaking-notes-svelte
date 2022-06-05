@@ -7,7 +7,7 @@
   let routes = {
     "/": Editor,
     "/help": Help,
-    "/about": About,
+    "/about": About
   };
 </script>
 

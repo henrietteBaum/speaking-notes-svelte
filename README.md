@@ -6,6 +6,7 @@ Provide accessibility for visual-impared users.
 
 ![screenshot: app-window speaking notes v.5](screenshots/screen-editor-5.0.png)
 
+You can try the Editor on:
 [Demo-page](https://henriettebaum.github.io/snote-page/)
 
 

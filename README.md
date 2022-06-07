@@ -23,7 +23,8 @@ You can try the Editor on:
 - Web-Speech-Api
 
 
-## Read more: Speaking-Notes-WIKI:
+## Read more: 
+[Speaking-Notes-WIKI:](https://github.com/henrietteBaum/speaking-notes-svelte.wiki.git)
 
 ## Learning sources:
 

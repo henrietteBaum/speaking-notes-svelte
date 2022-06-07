@@ -6,10 +6,13 @@ Provide accessibility for visual-impared users.
 
 ![screenshot: app-window speaking notes v.5](screenshots/screen-editor-5.0.png)
 
+[Demo-page](https://henriettebaum.github.io/snote-page/)
+
 
 ## ToDo:
 - add "Clear Editor"
 - update Wiki
+
 ## Dependencies
 
 - Svelte

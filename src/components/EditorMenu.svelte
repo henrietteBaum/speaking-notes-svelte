@@ -40,6 +40,10 @@
     link.click();
     URL.revokeObjectURL(url); 
 }
+
+function handleClearEditor() {
+  $textStore = '';
+}
 </script>
 
 <div class="nav-bar">
@@ -61,7 +65,7 @@
         </DropdownItem>
         <DropdownItem on:click={handleSaveFile($fileName)} >Save Text</DropdownItem>
         <DropdownItem divider />
-        <DropdownItem>Clear Editor</DropdownItem>
+        <DropdownItem on:click={handleClearEditor}>Clear Editor</DropdownItem>
       </DropdownMenu>
     </Dropdown>
 

@@ -11,7 +11,6 @@ You can try the Editor on:
 
 
 ## ToDo:
-- add "Clear Editor"
 - update Wiki
 
 ## Dependencies
@@ -24,7 +23,7 @@ You can try the Editor on:
 
 
 ## Read more: 
-[Speaking-Notes-WIKI:](https://github.com/henrietteBaum/speaking-notes-svelte.wiki.git)
+Speaking-Notes-Svelte-WIKI
 
 ## Learning sources:
 
